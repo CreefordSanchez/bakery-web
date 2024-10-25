@@ -1,0 +1,403 @@
+@charset "itf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a, li {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+:root {
+  --app-darkgreen: #00211A;
+  --app-fadegreen: #00211ada;
+  --app-beige: #F9F6F2;
+  --app-cyan: #bae8d4;;
+  --app-gray: #647c88;
+  --app-red: #dd6666;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  position: relative;
+}
+
+.container {
+  width: min(100% - 40px, 1000px);
+  margin-inline: auto;
+}
+
+/*****************************************************
+Header
+*****************************************************/
+header {
+  display: grid;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  background-color: var(--app-beige);
+}
+
+.section-one {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  i {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.473);
+  }
+  
+  h1 {
+    font-size: 20px;
+    font-weight: 850;
+    letter-spacing: 2px;
+    color: rgba(0, 0, 0, 0.842);
+  }
+}
+
+button, a, i {
+  cursor: pointer;
+}
+
+.header-menu {
+  padding-top: 60px;
+  background-color: var(--app-beige);
+  position: fixed;
+  left: -100vw;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  transition: left 0.5s;
+}
+
+.header-menu-content {
+  margin: 10px;
+}
+
+form {
+  display: flex;
+}
+
+.login {
+  display: flex;
+  color: var(--app-darkgreen);
+
+  a {
+    color: var(--app-darkgreen);
+  }
+}
+
+.user-icon {
+  border-radius: 50px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  border: solid 1px var(--app-darkgreen);
+}
+.header-menu-transition {
+  left: 0;
+}
+
+/*****************************************************
+Hero Banenr
+*****************************************************/
+.hero-slider {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  overflow-x: scroll; 
+  scroll-behavior: smooth;
+}
+
+.hero-btn-slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-bubble-box{
+  position: absolute;
+  top: -50px;
+}
+
+.bubble {
+  height: 10px;
+  width: 10px;
+  border: none;
+  border-radius: 50px;
+  background-color: var(--app-gray);
+}
+
+.bubble:nth-child(n+2) {
+  margin-left: 15px;
+}
+
+.hero {
+  background-image: url(../img/donut-hero-bakcground.png);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+}
+
+.hero-content {
+  display: grid;
+  justify-content: center;
+  color: var(--app-beige);
+}
+
+.hero-message {
+  text-align: center;
+
+  h1 {
+    font-weight: 900;
+    font-size: 34px;
+  }
+
+  p {
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 800;
+  }
+}
+
+.hero-link {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  a {
+    background-color: var(--app-red);
+    border-radius: 5px;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    line-height: 50px
+  }
+}
+
+/*****************************************************
+Main
+*****************************************************/
+.title-font {
+  font-family: 'Times New Roman', Times, sans-serif;
+  font-size: 38px;
+  font-weight: 540;
+  color: var(--app-darkgreen);
+}
+
+main {
+  margin: 50px 0;
+}
+
+.product-info {
+  text-align: center;
+
+  p {
+    color: #00211ada;
+    font-weight: 620;
+  }
+}
+
+.menu {
+  margin-top: 20px;
+
+  .btn-scroll {
+    background-color: #fff;
+  }
+
+  .view-all {
+    margin: 10px 0;
+    a {
+      font-size: 18px;
+      font-weight: 800;
+    }
+  }
+  
+  .line {
+    height: 1px;
+    border-top: solid 3px var(--app-gray)
+  }
+}
+
+.scroll {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-scroll {
+  font-size: 16px;
+  border: none;
+}
+
+.view-all {
+  display: grid;
+  justify-content: center;
+  color: var(--app-darkgreen);
+}
+
+.slide {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 70%;
+  gap: 11px;
+  overflow-x: hidden; 
+  scroll-behavior: smooth;
+}
+
+.box {
+  justify-content: center;
+  width: 100%;
+  height: 366px;
+  font-size: 20px;
+}
+
+.food-picture {
+  img {
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+  }
+}
+
+.food-info {
+  color: var(--app-gray);
+  font-weight: 600;
+  text-align: left;
+
+  span {
+    display: block;
+  }
+}
+
+.occasion-menu {
+  background-color: var(--app-cyan);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 640px;/**/
+  margin: 50px 0;
+}
+
+.occasion-content {
+  display: grid;
+  text-align: center;
+
+  .btn-scroll {
+    background-color: var(--app-cyan);
+  }
+  .view-all {
+    font-size: 16px;
+    margin: 20px 0;
+
+    a {
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+  
+  .line {
+    height: 1px;
+    border-top: solid 2px var(--app-gray)
+  }
+}
+
+.delivery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delivery-content {
+  text-align: center;
+  
+  .title-font {
+    padding-bottom: 8px;
+  }
+}
+
+footer {
+  padding-top: 20px;
+  background-color: var(--app-cyan);
+}
+
+.contact-us {
+  h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: var(--app-darkgreen);
+    font-weight: 800;
+  }
+}
+ 
+.media-links {
+  display: flex;
+  text-align: center;
+  margin-bottom: 20px;
+   i {
+    background-color: var(--app-darkgreen);
+    border-radius: 50px;
+    width: 33px;
+    line-height: 33px;
+    height: 33px;
+    font-size: 18px;
+    color: var(--app-cyan);
+   }
+
+   i:nth-child(n+2) {
+    margin-left: 10px;
+   }
+}
+
+.contact-list {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--app-darkgreen);
+  ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+}
+
+.shop-box {
+  p {
+    margin: 5px 0;
+    font-weight: 700;
+    color: var(--app-gray);
+  }
+  img {
+    height: 240px;
+    width: 230px;
+    margin: 8px;
+    border-radius: 30px;
+  }
+}
+
+.shop-box:nth-child(2) {
+  margin: 30px 0;
+}
+.shipping-box {
+  background-color: rgba(255, 166, 0, 0.445);
+}
+
+.pickup-box {
+  background-color: #f114146b;
+}
+
+.delivery-box {
+  background-color: #647c8885;
+}
